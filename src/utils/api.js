@@ -10,7 +10,6 @@ const options = {
 };
 
 export const fetchDataFromApi = async (url) => {
-    console.log("anmol"+BASE_URL);
     const { data } = await axios.get(`${BASE_URL}/${url}`, options);
     return data;
 };
