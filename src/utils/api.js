@@ -1,16 +1,16 @@
 import axios from "axios";
 
-const BASE_URL = "https://youtube138.p.rapidapi.com";
-
+const BASE_URL = process.env.REACT_APP_BASE_URL
 const options = {
     params: { hl: "en", gl: "US" },
     headers: {
-        "X-RapidAPI-Key":'5e1098bcd4mshbd1bd6553839c3ap192559jsn14d8ac6fb9fe',
-        "X-RapidAPI-Host": "youtube138.p.rapidapi.com",
+        "X-RapidAPI-Key":process.env.REACT_APP_API_KEY,
+        "X-RapidAPI-Host": process.env.REACT_APP_API_HOST,
     },
 };
 
 export const fetchDataFromApi = async (url) => {
+    console.log("anmol"+BASE_URL);
     const { data } = await axios.get(`${BASE_URL}/${url}`, options);
     return data;
 };
